@@ -38,7 +38,7 @@ class RecipeHandler {
         // Create and add the Add button
         const addButton = document.createElement('button');
         addButton.type = 'button';
-        addButton.className = 'ml-2 px-4 py-2 bg-rose-500 text-white rounded-lg hover:bg-rose-600 transition focus:outline-none focus:ring-2 focus:ring-rose-500';
+        addButton.className = 'ml-2 px-4 py-2 bg-green-500 text-white rounded-lg hover:bg-rose-600 transition focus:outline-none focus:ring-2 focus:ring-rose-500';
         addButton.innerHTML = '<i class="fas fa-plus"></i> Add';
         
         // Wrap input and button in a flex container
