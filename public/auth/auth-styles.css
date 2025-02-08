@@ -142,3 +142,148 @@ body {
     color: var(--primary-color);
     transform: translateX(-3px);
 }
+
+/* Desktop and larger screens */
+@media screen and (min-width: 1201px) {
+    .auth-container {
+        padding: 2.5rem;
+        max-width: 400px;
+    }
+
+    .auth-container h1 {
+        font-size: 2rem;
+    }
+
+    .auth-input {
+        padding: 0.75rem 1rem;
+        font-size: 1rem;
+    }
+
+    .auth-button {
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+/* Tablets and smaller desktops */
+@media screen and (max-width: 1200px) {
+    .auth-container {
+        padding: 2.25rem;
+        max-width: 380px;
+        margin: 0 1rem;
+    }
+}
+
+/* Large tablets */
+@media screen and (max-width: 1024px) {
+    .auth-container {
+        padding: 2rem;
+        max-width: 360px;
+    }
+
+    .auth-container h1 {
+        font-size: 1.85rem;
+        margin-bottom: 1.75rem;
+    }
+}
+
+/* Large Mobile */
+@media screen and (max-width: 768px) {
+    .auth-container {
+        padding: 1.75rem;
+        max-width: 340px;
+        margin: 1rem;
+    }
+
+    .auth-container h1 {
+        font-size: 1.75rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .auth-input {
+        padding: 0.7rem 0.9rem;
+        font-size: 0.95rem;
+    }
+
+    .auth-button {
+        padding: 0.7rem 1.4rem;
+        font-size: 0.95rem;
+    }
+
+    #auth-form {
+        gap: 0.9rem;
+    }
+
+    .auth-message {
+        font-size: 0.85rem;
+    }
+
+    .back-to-home {
+        font-size: 0.85rem;
+    }
+}
+
+/* Small Mobile */
+@media screen and (max-width: 480px) {
+    .auth-container {
+        padding: 1.5rem;
+        max-width: 100%;
+        margin: 1rem;
+        border-radius: 15px;
+    }
+
+    .auth-container h1 {
+        font-size: 1.6rem;
+        margin-bottom: 1.25rem;
+    }
+
+    .auth-input {
+        padding: 0.65rem 0.85rem;
+        font-size: 0.9rem;
+    }
+
+    .auth-button {
+        padding: 0.65rem 1.3rem;
+        font-size: 0.9rem;
+    }
+
+    #auth-form {
+        gap: 0.8rem;
+    }
+
+    .auth-message {
+        font-size: 0.8rem;
+        margin-top: 0.8rem;
+    }
+
+    .back-to-home {
+        font-size: 0.8rem;
+        margin-top: 0.8rem;
+    }
+}
+
+/* Very Small Mobile */
+@media screen and (max-width: 320px) {
+    .auth-container {
+        padding: 1.25rem;
+    }
+
+    .auth-container h1 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .auth-input {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.85rem;
+    }
+
+    .auth-button {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.85rem;
+    }
+
+    #auth-form {
+        gap: 0.7rem;
+    }
+}
