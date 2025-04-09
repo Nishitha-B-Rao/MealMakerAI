@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Stored Recipes</title>
+    <link rel="icon" href="../images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="store.css">
+</head>
+<body>
+    <!-- New Navigation Header -->
+    <nav class="nav-header">
+        <div class="nav-container">
+            <div class="nav-content">
+                <!-- Logo -->
+                <a href="#" class="nav-logo">
+                    <i class="fas fa-utensils"></i>
+                    <span>MealmakerAI</span>
+                </a>
+                
+                <!-- Navigation -->
+                <div class="nav-links">
+                    <a href="../recipes/index.html" class="nav-link">
+                        <i class="fas fa-book-open"></i>
+                        Generate Recipes
+                    </a>
+                    <button id="logoutBtn" onclick="logout()" class="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Logout
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <header class="header">
+            <h1>My Stored Recipes</h1>
+            <p>View and manage your saved recipes</p>
+        </header>
+
+        <div id="recipesList" class="recipes-grid"></div>
+        
+        <div id="errorDisplay" class="error-display"></div>
+        
+        <div id="loader" class="loader">
+            <div class="loader-content">Loading recipes...</div>
+        </div>
+
+        <div id="recipeModal" class="recipe-modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <div id="modalContent"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Logout function
+        function logout() {
+            localStorage.removeItem('token');
+            window.location.href = '../home.html'; 
+        }
+
+        // Check for token on page load
+        document.addEventListener('DOMContentLoaded', () => {
+            const token = localStorage.getItem('token');
+            if (!token) {
+                window.location.href = '../auth/login.html';
+            }
+        });
+    </script>
+    <script src="../recipes/store.js"></script>
+</body>
+</html>

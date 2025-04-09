@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - MealmakerAI</title>
+    <link rel="icon" href="../images/favicon.png" type="image/png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="auth-styles.css">
+</head>
+<body>
+    <div class="auth-container">
+        <h1><i class="fas fa-utensils" style="color: var(--primary-color)"></i> MealmakerAI</h1>
+        <div id="auth-form">
+            <input type="text" id="username" placeholder="Username" class="auth-input">
+            <input type="password" id="password" placeholder="Password" class="auth-input">
+            <button id="register-btn" class="auth-button">Register</button>
+        </div>
+        <div id="auth-message" class="auth-message"></div>
+        <p>Already have an account? <a href="login.html" class="back-to-home">Login</a></p>
+        <a href="../home.html" class="back-to-home">← Back to Home</a>
+    </div>
+    <script>
+        document.getElementById('register-btn').addEventListener('click', async () => {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const response = await fetch('/api/auth/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password }),
+            });
+            const data = await response.json();
+            document.getElementById('auth-message').textContent = data.message || data.error;
+        });
+    </script>
+</body>
+</html>
